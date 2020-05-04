@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
+const Name = ({ match }) => (
+  <div>
+    <h3> Hello {match.params.name}</h3>
+  </div>
+);
 export default () => {
   return (
-    <div style={{ position: 'relative' }}>
-      <h2>Hello world</h2>
+    <div>
+      <Route path="/hello/:name" component={Name} />
     </div>
   );
 };
